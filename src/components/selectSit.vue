@@ -234,7 +234,7 @@ export default {
 
     <div v-if="showModelBox" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
         <div class="bg-white rounded-lg relative w-full mx-2 lg:mx-0 lg:w-[50%] h-[50%] flex flex-col items-center justify-center">
-            <h1 class="font-bold text-[15px] lg:text-[20px]">Thank you for Confirming Your {{ maxSeats }} Seat for <br /> {{ movieTitle
+            <h1 class="font-bold text-[15px] lg:text-[20px]">Thank you for Confirming Your {{ maxSeats }} Seat for <br /> Title : {{ movieTitle
                 }}</h1>
             <button @click="openModelBox"
                 class="absolute top-[10px] right-[10px] p-2 bg-red-600 text-white flex items-center justify-center rounded-full h-[30px] w-[30px]">X
