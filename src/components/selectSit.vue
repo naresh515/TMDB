@@ -250,7 +250,7 @@ export default {
             <h1 class="font-bold text-[15px] lg:text-[20px]">Thank you for Confirming Your {{ maxSeats }} Seat for
                 <br /> Title : {{ movieTitle
                 }}
-                <br /> RS : {{ totalAmount }}
+                <br /> Total Amout : {{ totalAmount }}
             </h1>
             <button @click="openModelBox"
                 class="absolute top-[10px] right-[10px] p-2 bg-red-600 text-white flex items-center justify-center rounded-full h-[30px] w-[30px]">X
