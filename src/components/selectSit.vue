@@ -34,6 +34,18 @@ export default {
         },
         isConfirmButtonDisabled() {
             return this.selectedSeats.length !== this.maxSeats;
+        },
+        totalAmount() {
+            return this.selectedSeats.reduce((total, seat) => {
+                if (seat.startsWith('100')) {
+                    return total + 100;
+                } else if (seat.startsWith('200')) {
+                    return total + 200;
+                } else if (seat.startsWith('300')) {
+                    return total + 300;
+                }
+                return total;
+            }, 0);
         }
     },
     methods: {
@@ -233,9 +245,13 @@ export default {
     </div>
 
     <div v-if="showModelBox" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-        <div class="bg-white rounded-lg relative w-full mx-2 lg:mx-0 lg:w-[50%] h-[50%] flex flex-col items-center justify-center">
-            <h1 class="font-bold text-[15px] lg:text-[20px]">Thank you for Confirming Your {{ maxSeats }} Seat for <br /> Title : {{ movieTitle
-                }}</h1>
+        <div
+            class="bg-white rounded-lg relative w-full mx-2 lg:mx-0 lg:w-[50%] h-[50%] flex flex-col items-center justify-center">
+            <h1 class="font-bold text-[15px] lg:text-[20px]">Thank you for Confirming Your {{ maxSeats }} Seat for
+                <br /> Title : {{ movieTitle
+                }}
+                <br /> RS : {{ totalAmount }}
+            </h1>
             <button @click="openModelBox"
                 class="absolute top-[10px] right-[10px] p-2 bg-red-600 text-white flex items-center justify-center rounded-full h-[30px] w-[30px]">X
             </button>
